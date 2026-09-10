@@ -81,8 +81,8 @@ if (
       invitationNote.style.transform = "translateY(0)";
 
       cinematicReveal();
-      releasePetals();
-      showScrollCue();
+      window.setTimeout(releasePetals, 900);
+      showScrollCue(2400);
     } else {
       // Return to closed state.
       postcardPocket.style.gridTemplateRows = "0fr";
@@ -169,7 +169,7 @@ function cinematicReveal() {
       element.style.opacity = "1";
       element.style.transform =
         "translateY(0)";
-    }, 250 + index * 130);
+    }, 1350 + index * 80);
   });
 }
 
@@ -196,7 +196,7 @@ function resetCinematicReveal() {
 // SCROLL CUE
 // ==========================================================
 
-function showScrollCue() {
+function showScrollCue(delay = 1800) {
   const heroBottom =
     document.querySelector(".hero-bottom");
 
@@ -209,7 +209,7 @@ function showScrollCue() {
     heroBottom.classList.add(
       "scroll-cue"
     );
-  }, 1800);
+  }, delay);
 }
 
 function hideScrollCue() {
