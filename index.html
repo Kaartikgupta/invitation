@@ -183,189 +183,105 @@
         </p>
       </div>
     </section>
-    <!-- OUR STORY PHOTO CAROUSEL -->
-<section
-  class="section story-section reveal"
-  id="our-story"
-  aria-labelledby="story-title"
->
-  <div class="container">
-    <div class="section-heading story-heading">
-      <p class="eyebrow">Our Story</p>
-
-      <h2 id="story-title">Moments softly held</h2>
-
-      <div class="ornament" aria-hidden="true">✦</div>
-
-      <p>A few frames. A little magic. A lifetime ahead.</p>
-    </div>
-
-    <div
-      class="story-carousel"
-      id="story-carousel"
-      role="region"
-      aria-roledescription="carousel"
+    <!-- OUR STORY — SCRATCH TO REVEAL -->
+    <section
+      class="section story-section reveal"
+      id="our-story"
       aria-labelledby="story-title"
     >
-      <div
-        class="story-viewport"
-        tabindex="0"
-        aria-label="Story photos. Use the left and right arrow keys to browse."
-      >
-        <div class="story-track">
-
-          <!-- PHOTO 1 -->
-          <div
-            class="story-slide"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="1 of 3"
-          >
-            <div class="story-photo story-photo--one">
-              <!-- Replace this placeholder with your first image later. -->
-              <div class="story-placeholder">
-                <span class="story-photo-number" aria-hidden="true">01</span>
-
-                <div class="story-placeholder-center">
-                  <span class="story-monogram" aria-hidden="true">
-                    K<span>&amp;</span>H
-                  </span>
-
-                  <span class="story-placeholder-line" aria-hidden="true"></span>
-
-                  <p>Your photograph here</p>
-                  <small>A moment to treasure</small>
-                </div>
-
-                <span class="story-photo-label" aria-hidden="true">
-                  Our story, in photographs
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- PHOTO 2 -->
-          <div
-            class="story-slide"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="2 of 3"
-          >
-            <div class="story-photo story-photo--two">
-              <!-- Replace this placeholder with your second image later. -->
-              <div class="story-placeholder">
-                <span class="story-photo-number" aria-hidden="true">02</span>
-
-                <div class="story-placeholder-center">
-                  <span class="story-monogram" aria-hidden="true">
-                    K<span>&amp;</span>H
-                  </span>
-
-                  <span class="story-placeholder-line" aria-hidden="true"></span>
-
-                  <p>Your photograph here</p>
-                  <small>A memory to hold close</small>
-                </div>
-
-                <span class="story-photo-label" aria-hidden="true">
-                  Our story, in photographs
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- PHOTO 3 -->
-          <div
-            class="story-slide"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="3 of 3"
-          >
-            <div class="story-photo story-photo--three">
-              <!-- Replace this placeholder with your third image later. -->
-              <div class="story-placeholder">
-                <span class="story-photo-number" aria-hidden="true">03</span>
-
-                <div class="story-placeholder-center">
-                  <span class="story-monogram" aria-hidden="true">
-                    K<span>&amp;</span>H
-                  </span>
-
-                  <span class="story-placeholder-line" aria-hidden="true"></span>
-
-                  <p>Your photograph here</p>
-                  <small>A glimpse of our forever</small>
-                </div>
-
-                <span class="story-photo-label" aria-hidden="true">
-                  Our story, in photographs
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Enabled by JavaScript -->
-      <div class="story-controls" hidden>
-        <button
-          class="story-arrow story-prev"
-          type="button"
-          aria-label="Previous photo"
-        >
-          <span aria-hidden="true">←</span>
-        </button>
-
-        <div class="story-pagination">
-          <div class="story-dots" role="group" aria-label="Choose a photo">
-            <button
-              class="story-dot"
-              type="button"
-              aria-label="Show photo 1"
-              aria-current="true"
-            ></button>
-
-            <button
-              class="story-dot"
-              type="button"
-              aria-label="Show photo 2"
-            ></button>
-
-            <button
-              class="story-dot"
-              type="button"
-              aria-label="Show photo 3"
-            ></button>
-          </div>
-
-          <p class="story-counter" aria-hidden="true">
-            <span id="story-current">01</span>
-            <span class="story-counter-divider"></span>
-            03
-          </p>
+      <div class="container">
+        <div class="section-heading story-heading">
+          <p class="eyebrow">Our Story</p>
+          <h2 id="story-title">A little secret, just for you</h2>
+          <div class="ornament" aria-hidden="true">✦</div>
+          <p>Scratch away the gold to reveal our favourite moments.</p>
         </div>
 
-        <button
-          class="story-arrow story-next"
-          type="button"
-          aria-label="Next photo"
+        <div
+          class="story-carousel scratch-carousel"
+          id="story-carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-labelledby="story-title"
         >
-          <span aria-hidden="true">→</span>
-        </button>
+          <div
+            class="story-viewport"
+            tabindex="0"
+            aria-label="Scratch each card to reveal a photo. Use the left and right arrow keys to browse."
+          >
+            <div class="story-track">
+
+              <div class="story-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <div class="story-photo scratch-card">
+                  <img src="assets/photos/story-01.jpg" alt="Kaartik and Harsha — photograph one" loading="eager">
+                  <canvas class="scratch-layer" aria-hidden="true"></canvas>
+                  <div class="scratch-message" aria-hidden="true">
+                    <span class="scratch-icon">✦</span>
+                    <strong>Scratch to reveal</strong>
+                    <small>Our story · 01</small>
+                  </div>
+                  <button class="scratch-reveal-button" type="button">Reveal photo</button>
+                </div>
+              </div>
+
+              <div class="story-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <div class="story-photo scratch-card">
+                  <img src="assets/photos/story-02.jpg" alt="Kaartik and Harsha — photograph two" loading="lazy">
+                  <canvas class="scratch-layer" aria-hidden="true"></canvas>
+                  <div class="scratch-message" aria-hidden="true">
+                    <span class="scratch-icon">✦</span>
+                    <strong>Scratch to reveal</strong>
+                    <small>Our story · 02</small>
+                  </div>
+                  <button class="scratch-reveal-button" type="button">Reveal photo</button>
+                </div>
+              </div>
+
+              <div class="story-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <div class="story-photo scratch-card">
+                  <img src="assets/photos/story-03.jpg" alt="Kaartik and Harsha — photograph three" loading="lazy">
+                  <canvas class="scratch-layer" aria-hidden="true"></canvas>
+                  <div class="scratch-message" aria-hidden="true">
+                    <span class="scratch-icon">✦</span>
+                    <strong>Scratch to reveal</strong>
+                    <small>Our story · 03</small>
+                  </div>
+                  <button class="scratch-reveal-button" type="button">Reveal photo</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="story-controls" hidden>
+            <button class="story-arrow story-prev" type="button" aria-label="Previous photo">
+              <span aria-hidden="true">←</span>
+            </button>
+
+            <div class="story-pagination">
+              <div class="story-dots" role="group" aria-label="Choose a photo">
+                <button class="story-dot" type="button" aria-label="Show photo 1" aria-current="true"></button>
+                <button class="story-dot" type="button" aria-label="Show photo 2"></button>
+                <button class="story-dot" type="button" aria-label="Show photo 3"></button>
+              </div>
+              <p class="story-counter" aria-hidden="true">
+                <span id="story-current">01</span>
+                <span class="story-counter-divider"></span>
+                03
+              </p>
+            </div>
+
+            <button class="story-arrow story-next" type="button" aria-label="Next photo">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <p class="story-sr-only" id="story-status" role="status" aria-atomic="true"></p>
+        </div>
+
+        <p class="story-footnote">Some moments deserve to be discovered slowly.</p>
       </div>
-
-      <p
-        class="story-sr-only"
-        id="story-status"
-        role="status"
-        aria-atomic="true"
-      ></p>
-    </div>
-
-    <p class="story-footnote">Some moments deserve to be held forever.</p>
-  </div>
-</section>
+    </section>
 
     <!-- WEDDING EVENTS -->
     <section
@@ -627,6 +543,22 @@
       </div>
     </section>
   </main>
+
+  <!-- FINAL CLOSING SCREEN -->
+  <section class="closing-screen" id="closing-screen" aria-labelledby="closing-title">
+    <div class="closing-glow" aria-hidden="true"></div>
+    <div class="closing-inner">
+      <p class="closing-eyebrow">Until we celebrate together</p>
+      <div class="closing-ornament" aria-hidden="true">✦</div>
+      <p class="closing-date">26 · 27 January 2027</p>
+      <h2 id="closing-title">Kaartik <span>&amp;</span> Harsha</h2>
+      <p class="closing-message">Two hearts. Two families. One beautiful beginning.</p>
+      <div class="closing-rule" aria-hidden="true"></div>
+      <p class="closing-venue">Neendar Heritage Resorts · Jaipur</p>
+      <p class="closing-thanks">We cannot wait to make these memories with you.</p>
+      <a class="closing-back" href="#invitation">Back to the beginning ↑</a>
+    </div>
+  </section>
 
   <footer>
     <p class="footer-names">Kaartik &amp; Harsha</p>

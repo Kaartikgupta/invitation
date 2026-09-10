@@ -639,6 +639,188 @@ if (
 }
 
 // ==========================================================
+// SCRATCH-TO-REVEAL PHOTOS
+// ==========================================================
+
+function initializeScratchCards() {
+  const cards = [
+    ...document.querySelectorAll(".scratch-card")
+  ];
+
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    const canvas = card.querySelector(".scratch-layer");
+    const button = card.querySelector(".scratch-reveal-button");
+
+    if (!canvas) return;
+
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    if (!context) return;
+
+    let drawing = false;
+    let lastPoint = null;
+    let revealed = false;
+    let checkCounter = 0;
+
+    function resizeCanvas() {
+      const rect = card.getBoundingClientRect();
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+      canvas.width = Math.max(1, Math.floor(rect.width * ratio));
+      canvas.height = Math.max(1, Math.floor(rect.height * ratio));
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
+
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      paintCover(rect.width, rect.height);
+    }
+
+    function paintCover(width, height) {
+      context.globalCompositeOperation = "source-over";
+      context.clearRect(0, 0, width, height);
+
+      const gradient = context.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, "#ead1a1");
+      gradient.addColorStop(0.48, "#cba66a");
+      gradient.addColorStop(1, "#9c7336");
+      context.fillStyle = gradient;
+      context.fillRect(0, 0, width, height);
+
+      // Subtle paper-like flecks make the scratch surface feel physical.
+      context.globalAlpha = 0.18;
+      for (let i = 0; i < Math.floor(width * height / 1800); i += 1) {
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+        const size = 0.5 + Math.random() * 1.5;
+        context.fillStyle = i % 2 ? "#fff4d7" : "#6e4a1e";
+        context.fillRect(x, y, size, size);
+      }
+      context.globalAlpha = 1;
+
+      context.globalCompositeOperation = "destination-out";
+    }
+
+    function pointFromEvent(event) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      return {
+        x: (event.clientX - rect.left) * scaleX / (window.devicePixelRatio || 1),
+        y: (event.clientY - rect.top) * scaleY / (window.devicePixelRatio || 1)
+      };
+    }
+
+    function scratchAt(point) {
+      const rect = canvas.getBoundingClientRect();
+      const radius = Math.max(22, Math.min(34, rect.width * 0.065));
+
+      context.save();
+      context.globalCompositeOperation = "destination-out";
+      context.lineCap = "round";
+      context.lineJoin = "round";
+      context.lineWidth = radius * 2;
+      context.beginPath();
+
+      if (lastPoint) {
+        context.moveTo(lastPoint.x, lastPoint.y);
+        context.lineTo(point.x, point.y);
+      } else {
+        context.moveTo(point.x, point.y);
+        context.lineTo(point.x + 0.1, point.y + 0.1);
+      }
+
+      context.stroke();
+      context.restore();
+      lastPoint = point;
+
+      checkCounter += 1;
+      if (checkCounter % 12 === 0) {
+        checkRevealPercentage();
+      }
+    }
+
+    function checkRevealPercentage() {
+      if (revealed) return;
+
+      const sampleWidth = 70;
+      const sampleHeight = 70;
+      const sample = document.createElement("canvas");
+      sample.width = sampleWidth;
+      sample.height = sampleHeight;
+      const sampleContext = sample.getContext("2d", { willReadFrequently: true });
+      if (!sampleContext) return;
+
+      sampleContext.drawImage(canvas, 0, 0, sampleWidth, sampleHeight);
+      const pixels = sampleContext.getImageData(0, 0, sampleWidth, sampleHeight).data;
+      let transparent = 0;
+
+      for (let i = 3; i < pixels.length; i += 4) {
+        if (pixels[i] < 45) transparent += 1;
+      }
+
+      const percentage = transparent / (sampleWidth * sampleHeight);
+      if (percentage >= 0.55) revealCard();
+    }
+
+    function revealCard() {
+      if (revealed) return;
+      revealed = true;
+      drawing = false;
+      lastPoint = null;
+      card.classList.remove("is-scratching");
+      card.classList.add("is-revealed");
+      canvas.setAttribute("aria-hidden", "true");
+    }
+
+    canvas.addEventListener("pointerdown", (event) => {
+      if (revealed) return;
+      drawing = true;
+      lastPoint = null;
+      card.classList.add("is-scratching");
+      canvas.setPointerCapture?.(event.pointerId);
+      scratchAt(pointFromEvent(event));
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!drawing || revealed) return;
+      scratchAt(pointFromEvent(event));
+      event.preventDefault();
+    });
+
+    const stopDrawing = (event) => {
+      if (!drawing) return;
+      drawing = false;
+      lastPoint = null;
+      card.classList.remove("is-scratching");
+      canvas.releasePointerCapture?.(event.pointerId);
+      checkRevealPercentage();
+    };
+
+    canvas.addEventListener("pointerup", stopDrawing);
+    canvas.addEventListener("pointercancel", stopDrawing);
+    canvas.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse") stopDrawing(event);
+    });
+
+    button?.addEventListener("click", revealCard);
+
+    const image = card.querySelector("img");
+    if (image) {
+      image.addEventListener("error", () => {
+        card.classList.add("photo-missing");
+      });
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas, { passive: true });
+  });
+}
+
+initializeScratchCards();
+
+// ==========================================================
 // OUR STORY CAROUSEL
 // ==========================================================
 
