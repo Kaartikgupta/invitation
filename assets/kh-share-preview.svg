@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Kaartik and Harsha wedding invitation</title>
+  <desc id="desc">K and H wedding monogram with the wedding invitation details.</desc>
+  <rect width="1200" height="630" fill="#400f20"/>
+  <rect x="28" y="28" width="1144" height="574" rx="8" fill="none" stroke="#dfbc79" stroke-width="2" opacity=".65"/>
+  <circle cx="600" cy="235" r="105" fill="#762838" stroke="#dfbc79" stroke-width="5"/>
+  <circle cx="600" cy="235" r="91" fill="none" stroke="#dfbc79" stroke-width="2" opacity=".8"/>
+  <text x="600" y="265" fill="#f7deac" font-family="Georgia, serif" font-size="78" text-anchor="middle" letter-spacing="-6">K&amp;H</text>
+  <text x="600" y="415" fill="#f7deac" font-family="Georgia, serif" font-size="54" text-anchor="middle">Kaartik &amp; Harsha</text>
+  <text x="600" y="470" fill="#dfbc79" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" letter-spacing="5">26 &amp; 27 JANUARY 2027</text>
+  <text x="600" y="510" fill="#e5cdd0" font-family="Georgia, serif" font-size="22" text-anchor="middle">Neendar Heritage Resorts · Jaipur</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">K and H wedding monogram</title>
+  <desc id="desc">Gold K and H monogram inside a burgundy wax seal.</desc>
+  <circle cx="90" cy="90" r="80" fill="#762838" stroke="#dfbc79" stroke-width="4"/>
+  <circle cx="90" cy="90" r="69" fill="none" stroke="#dfbc79" stroke-width="1.5" opacity=".8"/>
+  <text x="90" y="108" fill="#f7deac" font-family="Georgia, serif" font-size="54" text-anchor="middle" letter-spacing="-4">K&amp;H</text>
+</svg>
