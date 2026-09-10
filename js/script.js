@@ -703,11 +703,9 @@ function initializeScratchCards() {
 
     function pointFromEvent(event) {
       const rect = canvas.getBoundingClientRect();
-      const scaleX = canvas.width / rect.width;
-      const scaleY = canvas.height / rect.height;
       return {
-        x: (event.clientX - rect.left) * scaleX / (window.devicePixelRatio || 1),
-        y: (event.clientY - rect.top) * scaleY / (window.devicePixelRatio || 1)
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
       };
     }
 
@@ -778,7 +776,9 @@ function initializeScratchCards() {
       drawing = true;
       lastPoint = null;
       card.classList.add("is-scratching");
-      canvas.setPointerCapture?.(event.pointerId);
+      if (canvas.setPointerCapture && event.isPrimary) {
+        canvas.setPointerCapture(event.pointerId);
+      }
       scratchAt(pointFromEvent(event));
       event.preventDefault();
     });
@@ -794,15 +794,17 @@ function initializeScratchCards() {
       drawing = false;
       lastPoint = null;
       card.classList.remove("is-scratching");
-      canvas.releasePointerCapture?.(event.pointerId);
+      if (
+        canvas.releasePointerCapture &&
+        canvas.hasPointerCapture?.(event.pointerId)
+      ) {
+        canvas.releasePointerCapture(event.pointerId);
+      }
       checkRevealPercentage();
     };
 
     canvas.addEventListener("pointerup", stopDrawing);
     canvas.addEventListener("pointercancel", stopDrawing);
-    canvas.addEventListener("pointerleave", (event) => {
-      if (event.pointerType === "mouse") stopDrawing(event);
-    });
 
     button?.addEventListener("click", revealCard);
 
