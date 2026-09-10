@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kaartik & Harsha | Wedding Invitation</title>
+
+  <meta
+    name="description"
+    content="Celebrate the wedding of Kaartik and Harsha on 26 and 27 January 2027 at Neendar Heritage Resorts, Jaipur."
+  >
+
+  <meta name="theme-color" content="#400f20">
+
+  <!-- Online fonts, with local fallback fonts defined in CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Our CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Our JavaScript file -->
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#celebrations">
+    Skip to wedding details
+  </a>
+<main>
+    <!-- HERO AND INVITATION -->
+    <section
+      class="hero"
+      id="invitation"
+      aria-labelledby="couple-names"
+    >
+      <div class="hero-content">
+        <p class="eyebrow">A royal invitation to our forever</p>
+
+        <div class="ornament" aria-hidden="true">✦</div>
+
+        <h1 id="couple-names">
+          Kaartik <span>&amp;</span> Harsha
+        </h1>
+
+        <p class="hero-date">26 &amp; 27 January 2027</p>
+        <p class="hero-venue">Neendar Heritage Resorts · Jaipur</p>
+
+        <div class="invitation-stage" id="invitation-stage">
+
+          <!-- POSTCARD -->
+          <!-- Remains readable if JavaScript is disabled. -->
+          <div class="postcard-pocket" id="postcard-pocket">
+            <div class="postcard-clip">
+              <div
+                class="postcard"
+                id="invitation-note"
+                role="region"
+                aria-label="Wedding invitation"
+              >
+                <div class="postcard-copy">
+                  <p class="postcard-eyebrow">
+                    Together with our families
+                  </p>
+
+                  <div class="ornament" aria-hidden="true">✦</div>
+
+                  <p class="postcard-intro">
+                    With hearts full of love,<br>
+                    we invite you to celebrate
+                  </p>
+
+                  <h2 class="postcard-name">Kaartik</h2>
+                  <p class="postcard-parent">Son of Amit</p>
+
+                  <p class="postcard-and">&amp;</p>
+
+                  <h2 class="postcard-name">Harsha</h2>
+                  <p class="postcard-parent">Daughter of Narendar</p>
+
+                  <div class="ornament" aria-hidden="true">✦</div>
+
+                  <p class="postcard-forever">
+                    As they begin their forever.
+                  </p>
+
+                  <p class="postcard-message">
+                    Two hearts, two families, and a lifetime of love.
+                    Your presence will make this beginning even more beautiful.
+                  </p>
+
+                  <div class="postcard-date">
+                    <p>26 &amp; 27 January 2027</p>
+                    <span>Neendar Heritage Resorts, Jaipur</span>
+                  </div>
+
+                  <a class="explore-link" href="#celebrations">
+                    Discover the celebrations
+                    <span class="explore-arrow" aria-hidden="true">↓</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ENVELOPE -->
+          <!-- JavaScript enables this button. -->
+          <button
+            class="envelope"
+            id="envelope"
+            type="button"
+            aria-expanded="false"
+            aria-controls="invitation-note"
+            aria-label="Open our wedding invitation"
+            hidden
+          >
+            <span class="envelope-flap" aria-hidden="true"></span>
+
+            <span class="wax-seal" aria-hidden="true">
+              K&amp;H
+            </span>
+
+            <span class="envelope-label" id="envelope-label">
+              Tap to open our invitation
+            </span>
+          </button>
+        </div>
+
+        <p class="hero-bottom">
+          Two days. A thousand memories. One beautiful beginning.
+        </p>
+        <div class="hero-scroll-cue" id="hero-scroll-cue" aria-hidden="true">
+          <span>Scroll to discover</span>
+          <span class="hero-scroll-arrow">↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section
+      class="countdown-section reveal"
+      aria-label="Countdown to our celebration dates"
+    >
+      <div class="container">
+        <p class="eyebrow">Our next chapter is getting closer</p>
+
+        <div
+          class="countdown"
+          id="countdown"
+          role="timer"
+          aria-label="Time until 26 January 2027 in Jaipur"
+          hidden
+        >
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <p class="countdown-caption" id="countdown-caption">
+          Save the dates: 26 &amp; 27 January 2027
+        </p>
+      </div>
+    </section>
+    <!-- OUR STORY PHOTO CAROUSEL -->
+<section
+  class="section story-section reveal"
+  id="our-story"
+  aria-labelledby="story-title"
+>
+  <div class="container">
+    <div class="section-heading story-heading">
+      <p class="eyebrow">Our Story</p>
+
+      <h2 id="story-title">Moments softly held</h2>
+
+      <div class="ornament" aria-hidden="true">✦</div>
+
+      <p>A few frames. A little magic. A lifetime ahead.</p>
+    </div>
+
+    <div
+      class="story-carousel"
+      id="story-carousel"
+      role="region"
+      aria-roledescription="carousel"
+      aria-labelledby="story-title"
+    >
+      <div
+        class="story-viewport"
+        tabindex="0"
+        aria-label="Story photos. Use the left and right arrow keys to browse."
+      >
+        <div class="story-track">
+
+          <!-- PHOTO 1 -->
+          <div
+            class="story-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="1 of 3"
+          >
+            <div class="story-photo story-photo--one">
+              <!-- Replace this placeholder with your first image later. -->
+              <div class="story-placeholder">
+                <span class="story-photo-number" aria-hidden="true">01</span>
+
+                <div class="story-placeholder-center">
+                  <span class="story-monogram" aria-hidden="true">
+                    K<span>&amp;</span>H
+                  </span>
+
+                  <span class="story-placeholder-line" aria-hidden="true"></span>
+
+                  <p>Your photograph here</p>
+                  <small>A moment to treasure</small>
+                </div>
+
+                <span class="story-photo-label" aria-hidden="true">
+                  Our story, in photographs
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHOTO 2 -->
+          <div
+            class="story-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="2 of 3"
+          >
+            <div class="story-photo story-photo--two">
+              <!-- Replace this placeholder with your second image later. -->
+              <div class="story-placeholder">
+                <span class="story-photo-number" aria-hidden="true">02</span>
+
+                <div class="story-placeholder-center">
+                  <span class="story-monogram" aria-hidden="true">
+                    K<span>&amp;</span>H
+                  </span>
+
+                  <span class="story-placeholder-line" aria-hidden="true"></span>
+
+                  <p>Your photograph here</p>
+                  <small>A memory to hold close</small>
+                </div>
+
+                <span class="story-photo-label" aria-hidden="true">
+                  Our story, in photographs
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHOTO 3 -->
+          <div
+            class="story-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="3 of 3"
+          >
+            <div class="story-photo story-photo--three">
+              <!-- Replace this placeholder with your third image later. -->
+              <div class="story-placeholder">
+                <span class="story-photo-number" aria-hidden="true">03</span>
+
+                <div class="story-placeholder-center">
+                  <span class="story-monogram" aria-hidden="true">
+                    K<span>&amp;</span>H
+                  </span>
+
+                  <span class="story-placeholder-line" aria-hidden="true"></span>
+
+                  <p>Your photograph here</p>
+                  <small>A glimpse of our forever</small>
+                </div>
+
+                <span class="story-photo-label" aria-hidden="true">
+                  Our story, in photographs
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Enabled by JavaScript -->
+      <div class="story-controls" hidden>
+        <button
+          class="story-arrow story-prev"
+          type="button"
+          aria-label="Previous photo"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <div class="story-pagination">
+          <div class="story-dots" role="group" aria-label="Choose a photo">
+            <button
+              class="story-dot"
+              type="button"
+              aria-label="Show photo 1"
+              aria-current="true"
+            ></button>
+
+            <button
+              class="story-dot"
+              type="button"
+              aria-label="Show photo 2"
+            ></button>
+
+            <button
+              class="story-dot"
+              type="button"
+              aria-label="Show photo 3"
+            ></button>
+          </div>
+
+          <p class="story-counter" aria-hidden="true">
+            <span id="story-current">01</span>
+            <span class="story-counter-divider"></span>
+            03
+          </p>
+        </div>
+
+        <button
+          class="story-arrow story-next"
+          type="button"
+          aria-label="Next photo"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <p
+        class="story-sr-only"
+        id="story-status"
+        role="status"
+        aria-atomic="true"
+      ></p>
+    </div>
+
+    <p class="story-footnote">Some moments deserve to be held forever.</p>
+  </div>
+</section>
+
+    <!-- WEDDING EVENTS -->
+    <section
+      class="section container reveal"
+      id="celebrations"
+      aria-labelledby="celebrations-title"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">The wedding festivities</p>
+
+        <h2 id="celebrations-title">
+          Four celebrations.<br>
+          One love story.
+        </h2>
+
+        <div class="ornament" aria-hidden="true">✦</div>
+
+        <p>
+          A little colour, a little sparkle, and a whole lot of love.
+          Tap each card to discover the details.
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <!-- MEHNDI -->
+        <details class="event-card event-mehndi">
+          <summary>
+            <span class="event-symbol" aria-hidden="true">❧</span>
+
+            <time datetime="2027-01-26">
+              Tuesday · 26 January 2027
+            </time>
+
+            <h3>Mehndi</h3>
+            <p class="event-subtitle">Love, written in henna.</p>
+          </summary>
+
+          <div class="event-details">
+            <p><strong>Venue:</strong> Neendar Heritage Resorts, Jaipur</p>
+            <p><strong>Time:</strong> To be announced</p>
+            <p><strong>Dress code:</strong> Details coming soon</p>
+          </div>
+        </details>
+
+        <!-- SANGEET -->
+        <details class="event-card event-sangeet">
+          <summary>
+            <span class="event-symbol" aria-hidden="true">♫</span>
+
+            <time datetime="2027-01-26">
+              Tuesday · 26 January 2027
+            </time>
+
+            <h3>Sangeet Night</h3>
+            <p class="event-subtitle">Let our hearts set the rhythm.</p>
+          </summary>
+
+          <div class="event-details">
+            <p><strong>Venue:</strong> Neendar Heritage Resorts, Jaipur</p>
+            <p><strong>Time:</strong> To be announced</p>
+            <p><strong>Dress code:</strong> Details coming soon</p>
+          </div>
+        </details>
+
+        <!-- HALDI -->
+        <details class="event-card event-haldi">
+          <summary>
+            <span class="event-symbol" aria-hidden="true">☀</span>
+
+            <time datetime="2027-01-27">
+              Wednesday · 27 January 2027
+            </time>
+
+            <h3>Haldi Carnival</h3>
+            <p class="event-subtitle">A little sunshine. A lot of joy.</p>
+          </summary>
+
+          <div class="event-details">
+            <p><strong>Venue:</strong> Neendar Heritage Resorts, Jaipur</p>
+            <p><strong>Time:</strong> To be announced</p>
+            <p><strong>Dress code:</strong> Details coming soon</p>
+          </div>
+        </details>
+
+        <!-- WEDDING -->
+        <details class="event-card event-wedding">
+          <summary>
+            <span class="event-symbol" aria-hidden="true">✦</span>
+
+            <time datetime="2027-01-27">
+              Wednesday · 27 January 2027
+            </time>
+
+            <h3>The Wedding</h3>
+            <p class="event-subtitle">Where our forever begins.</p>
+          </summary>
+
+          <div class="event-details">
+            <p><strong>Venue:</strong> Neendar Heritage Resorts, Jaipur</p>
+            <p><strong>Time:</strong> To be announced</p>
+            <p><strong>Dress code:</strong> Details coming soon</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- MOBILE WEDDING TIMELINE -->
+      <div class="wedding-timeline" aria-label="Wedding timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <article class="timeline-item timeline-mehndi">
+          <div class="timeline-marker" aria-hidden="true">01</div>
+          <div class="timeline-content">
+            <p class="timeline-day">26 January 2027 · Tuesday</p>
+            <h3>Mehndi</h3>
+            <p>Love, written in henna.</p>
+            <span>Neendar Heritage Resorts · Jaipur</span>
+          </div>
+        </article>
+
+        <article class="timeline-item timeline-sangeet">
+          <div class="timeline-marker" aria-hidden="true">02</div>
+          <div class="timeline-content">
+            <p class="timeline-day">26 January 2027 · Tuesday</p>
+            <h3>Sangeet Night</h3>
+            <p>Let our hearts set the rhythm.</p>
+            <span>Neendar Heritage Resorts · Jaipur</span>
+          </div>
+        </article>
+
+        <article class="timeline-item timeline-haldi">
+          <div class="timeline-marker" aria-hidden="true">03</div>
+          <div class="timeline-content">
+            <p class="timeline-day">27 January 2027 · Wednesday</p>
+            <h3>Haldi Carnival</h3>
+            <p>A little sunshine. A lot of joy.</p>
+            <span>Neendar Heritage Resorts · Jaipur</span>
+          </div>
+        </article>
+
+        <article class="timeline-item timeline-wedding">
+          <div class="timeline-marker" aria-hidden="true">04</div>
+          <div class="timeline-content">
+            <p class="timeline-day">27 January 2027 · Wednesday</p>
+            <h3>The Wedding</h3>
+            <p>Where our forever begins.</p>
+            <span>Neendar Heritage Resorts · Jaipur</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="calendar-action" id="calendar-action" hidden>
+        <button class="button" id="calendar-button" type="button">
+          <span aria-hidden="true">＋</span>
+          Add to calendar
+        </button>
+
+        <p>
+          Downloads a calendar file for both dates.
+          Exact event timings will follow.
+        </p>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section
+      class="section venue-section reveal"
+      id="venue"
+      aria-labelledby="venue-title"
+    >
+      <div class="container venue-layout">
+        <div class="venue-art" aria-hidden="true">
+          <div>
+            <div class="ornament">✦</div>
+            <span>Jaipur</span>
+            <small>The Pink City</small>
+            <div class="ornament">✦</div>
+          </div>
+        </div>
+
+        <div class="venue-copy">
+          <p class="eyebrow">Meet us in Jaipur</p>
+
+          <h2 id="venue-title">
+            Neendar<br>
+            Heritage Resorts
+          </h2>
+
+          <p>
+            Our celebrations bring us together in the Pink City.
+            We can’t wait to share this beautiful chapter with you.
+          </p>
+
+          <p>Jaipur, Rajasthan, India</p>
+
+          <!-- Replace this search URL with the confirmed venue map pin. -->
+          <a
+            class="button"
+            href="https://www.google.com/maps/search/?api=1&query=Neendar%20Heritage%20Resorts%2C%20Jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find venue on Google Maps ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUEST GUIDE -->
+    <section
+      class="section container reveal"
+      id="guest-guide"
+      aria-labelledby="guide-title"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">A little planning, a lovely celebration</p>
+        <h2 id="guide-title">For our guests</h2>
+        <div class="ornament" aria-hidden="true">✦</div>
+      </div>
+
+      <div class="guest-guide">
+        <details>
+          <summary>Which dates should I save?</summary>
+          <p>
+            Please save 26 and 27 January 2027.
+            Mehndi and Sangeet Night take place on 26 January,
+            followed by Haldi Carnival and the Wedding on 27 January.
+          </p>
+        </details>
+
+        <details>
+          <summary>What are the event timings?</summary>
+          <p>
+            Exact timings will be shared here once confirmed.
+            The calendar download saves both dates as an all-day event,
+            not as confirmed ceremony times.
+          </p>
+        </details>
+
+        <details>
+          <summary>What should I wear?</summary>
+          <p>Event-specific dress codes will be added soon.</p>
+        </details>
+
+        <details>
+          <summary>Will accommodation or transport be arranged?</summary>
+          <p>
+            Accommodation and transport details will be shared
+            once arrangements are confirmed.
+          </p>
+        </details>
+
+        <div class="rsvp-note">
+          <p class="eyebrow">We hope you’ll join us</p>
+          <h3>A celebration made complete by you.</h3>
+          <p>
+            RSVP instructions and contact details will be shared soon.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-names">Kaartik &amp; Harsha</p>
+    <p>26–27 JANUARY 2027 · JAIPUR</p>
+  </footer>
+
+  <div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
+</body>
+</html>
