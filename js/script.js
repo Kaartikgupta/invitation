@@ -560,7 +560,7 @@ if (
         "DTEND;VALUE=DATE:20270128",
         "SUMMARY:Kaartik & Harsha - Wedding Celebrations",
         "LOCATION:Neendar Heritage Resorts\\, Jaipur",
-        "DESCRIPTION:26 Jan: Mehndi and Sangeet Night.\\n27 Jan: Haldi Carnival and Wedding.\\nExact event timings to be announced.",
+        "DESCRIPTION:26 Jan: Mehndi at 12:00 PM; Sangeet Night at 7:00 PM.\\n27 Jan: Haldi Carnival at 10:00 AM; Wedding at 6:00 PM.",
         "END:VEVENT",
         "END:VCALENDAR"
       ];

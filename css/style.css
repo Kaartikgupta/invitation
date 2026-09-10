@@ -1693,6 +1693,16 @@ footer p:last-child {
   font-size: 1.05rem;
 }
 
+.timeline-content .timeline-time {
+  margin-top: 8px;
+  color: var(--wine);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .timeline-content span {
   color: var(--muted);
   font-size: 0.68rem;
