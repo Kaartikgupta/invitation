@@ -199,24 +199,30 @@ function resetCinematicReveal() {
 function showScrollCue(delay = 1800) {
   const heroBottom =
     document.querySelector(".hero-bottom");
+  const scrollCue =
+    document.getElementById("hero-scroll-cue");
 
-  if (!heroBottom) return;
+  if (!heroBottom || !scrollCue) return;
 
   window.setTimeout(() => {
     heroBottom.textContent =
-      "Scroll to discover our story ↓";
+      "";
 
     heroBottom.classList.add(
       "scroll-cue"
     );
+
+    scrollCue.classList.add("is-visible");
   }, delay);
 }
 
 function hideScrollCue() {
   const heroBottom =
     document.querySelector(".hero-bottom");
+  const scrollCue =
+    document.getElementById("hero-scroll-cue");
 
-  if (!heroBottom) return;
+  if (!heroBottom || !scrollCue) return;
 
   heroBottom.textContent =
     "Two days. A thousand memories. One beautiful beginning.";
@@ -224,6 +230,8 @@ function hideScrollCue() {
   heroBottom.classList.remove(
     "scroll-cue"
   );
+
+  scrollCue.classList.remove("is-visible");
 }
 
 // ==========================================================
@@ -890,7 +898,6 @@ initializeScratchCards();
   }
 
   let currentIndex = 0;
-  let swipeStart = null;
 
   carousel.classList.add(
     "is-enhanced"
@@ -1047,86 +1054,6 @@ initializeScratchCards();
 
           break;
       }
-    }
-  );
-
-  viewport.addEventListener(
-    "touchstart",
-    (event) => {
-      if (
-        event.touches.length !==
-        1
-      ) {
-        swipeStart = null;
-        return;
-      }
-
-      const touch =
-        event.touches[0];
-
-      swipeStart = {
-        x: touch.clientX,
-        y: touch.clientY
-      };
-    },
-    {
-      passive: true
-    }
-  );
-
-  viewport.addEventListener(
-    "touchend",
-    (event) => {
-      if (!swipeStart) {
-        return;
-      }
-
-      const touch =
-        event.changedTouches[0];
-
-      const distanceX =
-        touch.clientX -
-        swipeStart.x;
-
-      const distanceY =
-        touch.clientY -
-        swipeStart.y;
-
-      swipeStart = null;
-
-      const isHorizontalSwipe =
-        Math.abs(distanceX) >
-          50 &&
-        Math.abs(distanceX) >
-          Math.abs(distanceY) *
-            1.3;
-
-      if (!isHorizontalSwipe) {
-        return;
-      }
-
-      if (distanceX < 0) {
-        showSlide(
-          currentIndex + 1
-        );
-      } else {
-        showSlide(
-          currentIndex - 1
-        );
-      }
-    },
-    {
-      passive: true
-    }
-  );
-
-  viewport.addEventListener(
-    "touchcancel",
-    () => {
-      swipeStart = null;
-    },
-    {
-      passive: true
     }
   );
 

@@ -1434,11 +1434,22 @@ footer p:last-child {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .hero-scroll-cue.is-visible {
   opacity: 0.85;
   transform: translateY(0);
+}
+
+.hero-scroll-cue:hover {
+  opacity: 1;
+}
+
+.hero-scroll-cue:focus-visible {
+  outline-color: var(--gold);
+  outline-offset: 8px;
 }
 
 .hero-scroll-arrow {
@@ -1457,6 +1468,8 @@ footer p:last-child {
   transform: translateY(0) scale(1);
   transition:
     transform 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s,
     opacity 0.6s ease;
 }
@@ -1473,7 +1486,15 @@ footer p:last-child {
 /* The envelope lifts slightly while opening */
 .invitation-stage.is-interactive .envelope.is-open {
   animation: none;
-  transform: translateY(16px) scale(0.985);
+  transform: translateY(34px) scale(0.94);
+  opacity: 0 !important;
+  visibility: hidden;
+  pointer-events: none;
+  height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-width: 0;
+  box-shadow: none;
 }
 
 /* A little more ceremony around the seal */
