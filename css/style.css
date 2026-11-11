@@ -357,6 +357,27 @@ button, a, summary {
   pointer-events: none;
 }
 
+.hero-ganesha {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.ganesha-icon {
+  display: block;
+  margin: 0 auto 10px;
+  opacity: 0.9;
+}
+
+.ganesha-shloka {
+  margin: 0 auto;
+  max-width: 320px;
+  color: var(--gold);
+  font-family: "Noto Sans Devanagari", var(--serif), serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
 .postcard-eyebrow {
   margin-bottom: 18px;
   color: #735320;
@@ -872,10 +893,28 @@ footer {
   text-align: center;
 }
 
-.footer-names {
-  margin-bottom: 7px;
+.footer-welcome {
+  max-width: 520px;
+  margin: 0 auto 18px;
   font-family: var(--serif);
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.footer-families {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  color: var(--wine);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.footer-families p {
+  margin: 0;
 }
 
 footer p:last-child {
@@ -1009,6 +1048,15 @@ footer p:last-child {
   .postcard-eyebrow {
     font-size: 0.56rem;
     letter-spacing: 0.13em;
+  }
+
+  .ganesha-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ganesha-shloka {
+    font-size: 0.78rem;
   }
 
   .envelope {
@@ -1743,6 +1791,13 @@ footer p:last-child {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.timeline-content .timeline-dress-code {
+  margin-top: 10px;
+  color: var(--wine);
+  font-family: var(--sans);
+  font-size: 0.8rem;
 }
 
 .timeline-content span {
