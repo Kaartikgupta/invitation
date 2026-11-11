@@ -197,6 +197,14 @@ button, a, summary {
   color: var(--gold);
 }
 
+.hero-content > .eyebrow {
+  margin-bottom: 6px;
+}
+
+.hero-content > .ornament {
+  margin: 6px auto;
+}
+
 .hero-logo {
   display: block;
   font-size: 10px;
@@ -219,7 +227,7 @@ button, a, summary {
 }
 
 .hero h1 {
-  margin: 18px 0;
+  margin: 8px 0 18px;
   font-size: clamp(3.8rem, 10vw, 7rem);
   letter-spacing: -0.03em;
 }
@@ -917,7 +925,7 @@ footer {
   margin: 0;
 }
 
-footer p:last-child {
+footer > p:last-child {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 0.72rem;
