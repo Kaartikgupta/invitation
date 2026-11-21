@@ -760,6 +760,11 @@ button, a, summary {
   margin-bottom: 0;
 }
 
+.event-details .event-lunch {
+  font-family: var(--sans);
+  font-size: 0.55rem;
+}
+
 .calendar-action {
   margin-top: 34px;
   text-align: center;
@@ -1789,6 +1794,15 @@ footer > p:last-child {
   color: var(--muted);
   font-family: var(--serif);
   font-size: 1.05rem;
+}
+
+.timeline-content > p.event-lunch {
+  font-size: 0.72rem;
+}
+
+.event-lunch-time {
+  font-family: var(--sans);
+  font-weight: 600;
 }
 
 .timeline-content .timeline-time {
